@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>EvoEndo</title>
-  <meta name="theme-color" content="#ffffff" />
+
+  <!-- ICONOS -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- META APP -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="EvoEndo">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
   <style>
-    body { font-family: -apple-system, system-ui, Arial; margin: 16px; line-height: 1.2; }
+    body { font-family: -apple-system, system-ui, Arial; margin: 16px; line-height: 1.2; background: #ffffff; }
     h1 { font-size: 20px; margin: 0 0 12px; }
     .card { border: 1px solid #ddd; border-radius: 12px; padding: 12px; margin-bottom: 12px; }
     label { display:block; font-size: 12px; opacity: .8; margin: 10px 0 4px; }
@@ -19,8 +32,10 @@
     .small { font-size: 12px; opacity: .7; margin-top: 6px; }
   </style>
 </head>
+
 <body>
-  <h1>EvoEndo (MVP)</h1>
+
+  <h1>EvoEndo</h1>
 
   <div class="card">
     <div class="row">
@@ -51,7 +66,7 @@
       </div>
     </div>
 
-    <label>Irrigación (elige protocolo)</label>
+    <label>Irrigación</label>
     <select id="irrig">
       <option value="NaOCl + EDTA + SF">NaOCl + EDTA + SF</option>
       <option value="NaOCl + EDTA">NaOCl + EDTA</option>
@@ -102,9 +117,12 @@
       <button id="btnClear" class="secondary">Limpiar</button>
     </div>
 
-    <div class="small">Tip: iPhone → Safari → Compartir → “Agregar a pantalla de inicio”.</div>
+    <div class="small">
+      iPhone → Safari → Compartir → Agregar a pantalla de inicio
+    </div>
   </div>
 
   <script src="app.js"></script>
+
 </body>
 </html>
