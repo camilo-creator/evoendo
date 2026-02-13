@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EvoEndo</title>
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    body { font-family: -apple-system, system-ui, Arial; margin: 16px; line-height: 1.2; }
+    h1 { font-size: 20px; margin: 0 0 12px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+    label { display:block; font-size: 12px; opacity: .8; margin: 10px 0 4px; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 10px; font-size: 16px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 10px; }
+    button { padding: 12px; border-radius: 10px; border: 1px solid #111; background: #111; color: #fff; font-size: 15px; }
+    button.secondary { background: #fff; color: #111; }
+    .out { white-space: pre-wrap; font-family: ui-monospace, Menlo, monospace; font-size: 14px; }
+    .small { font-size: 12px; opacity: .7; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>EvoEndo (MVP)</h1>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Pieza</label>
+        <input id="pieza" value="1.8" />
+      </div>
+      <div>
+        <label>LT (mm)</label>
+        <input id="lt" inputmode="numeric" value="19" />
+      </div>
+    </div>
+
+    <label>Conductos</label>
+    <input id="conductos" value="MV, ML y D" />
+
+    <div class="row">
+      <div>
+        <label>Preparación final</label>
+        <input id="prep" value="30/.04" />
+      </div>
+      <div>
+        <label>Sesión</label>
+        <select id="sesion">
+          <option value="única">Única</option>
+          <option value="múltiple">Múltiple</option>
+        </select>
+      </div>
+    </div>
+
+    <label>Irrigación (elige protocolo)</label>
+    <select id="irrig">
+      <option value="NaOCl + EDTA + SF">NaOCl + EDTA + SF</option>
+      <option value="NaOCl + EDTA">NaOCl + EDTA</option>
+      <option value="NaOCl + SF">NaOCl + SF</option>
+      <option value="EDTA + SF">EDTA + SF</option>
+      <option value="Personalizado">Personalizado</option>
+    </select>
+
+    <div id="irrigCustomWrap" style="display:none;">
+      <label>Irrigación personalizada</label>
+      <input id="irrigCustom" placeholder="Ej: NaOCl 2.5% + EDTA 17% + SF" />
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Obturación</label>
+        <select id="obt">
+          <option value="Obturación tridimensional del SCR">Obturación tridimensional del SCR</option>
+          <option value="Obturación del SCR">Obturación del SCR</option>
+          <option value="Sellado del SCR">Sellado del SCR</option>
+        </select>
+      </div>
+      <div>
+        <label>Incidentes intraop.</label>
+        <select id="inc">
+          <option value="no">No</option>
+          <option value="sí">Sí</option>
+        </select>
+      </div>
+    </div>
+
+    <label>Notas (opcional)</label>
+    <input id="notas" placeholder="Ej: control Rx, dolor post, etc." />
+  </div>
+
+  <div class="card">
+    <div class="btns">
+      <button id="btnRayen">Rayén ultra</button>
+      <button id="btnSenior" class="secondary">Endo senior</button>
+      <button id="btnML" class="secondary">Medico-legal</button>
+    </div>
+
+    <label>Salida</label>
+    <div id="out" class="out"></div>
+
+    <div class="btns" style="grid-template-columns: 1fr 1fr;">
+      <button id="btnCopy">Copiar</button>
+      <button id="btnClear" class="secondary">Limpiar</button>
+    </div>
+
+    <div class="small">Tip: iPhone → Safari → Compartir → “Agregar a pantalla de inicio”.</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
